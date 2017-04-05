@@ -2,7 +2,7 @@
 node_modules
 
 # bower components
-bower_components
+#bower_components
 
 src/.sass-cache/
 
