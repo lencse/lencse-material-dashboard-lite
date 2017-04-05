@@ -9,3 +9,7 @@ src/.sass-cache/
 .idea
 
 .temp
+
+/dist
+/build
+/.vscode

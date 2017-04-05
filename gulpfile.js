@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    concat = require('gulp-concat'),
     jscs = require('gulp-jscs'),
     babel = require('gulp-babel'),
     inject = require('gulp-inject'),
@@ -129,4 +130,10 @@ gulp.task('build', ['minifyJs', 'minifyCss', 'copyMinCssLib', 'copyMinJsLib'], f
         .pipe(gulp.dest('dist/'));
     gulp.src('src/images/**/*')
         .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build-js', ['minifyJs', 'copyMinJsLib'], function () {
+    gulp.src('./dist/js/**/*.js')
+        .pipe(concat('dark-material.js'))
+        .pipe(gulp.dest('./build/'));
 });
