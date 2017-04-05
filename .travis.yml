@@ -3,5 +3,7 @@ node_js:
     - 6
     - 7
 cache: yarn
+before_script:
+    - yarn prepublish
 script:
     - yarn test

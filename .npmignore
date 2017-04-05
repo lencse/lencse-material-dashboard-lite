@@ -12,5 +12,5 @@ src/.sass-cache/
 
 .DS_Store
 /dist
-/build
+#/build
 /.vscode
