@@ -132,8 +132,11 @@ gulp.task('build', ['minifyJs', 'minifyCss', 'copyMinCssLib', 'copyMinJsLib'], f
         .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('build-js', ['minifyJs', 'copyMinJsLib'], function () {
+gulp.task('build-js', ['minifyJs', 'copyMinJsLib', 'copyMinCssLib'], function () {
     gulp.src('./dist/js/**/*.js')
         .pipe(concat('dark-material.js'))
+        .pipe(gulp.dest('./build/'));
+    gulp.src('./dist/css/**/*.css')
+        .pipe(concat('dark-material-vendor.css'))
         .pipe(gulp.dest('./build/'));
 });
